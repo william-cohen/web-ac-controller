@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!-- Time picker -->
+    <link rel="stylesheet" href="dist/mtr-datepicker.min.css">
+    <link rel="stylesheet" href="dist/mtr-datepicker.default-theme.min.css">
+
+    <style>
+    body {
+        margin: 0;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    .topnav {
+        overflow: hidden;
+        background-color: #34495e;
+    }
+
+    .topnav a {
+        float: left;
+
+        margin:auto;
+        width:100%;
+
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    #times-input-months, #times-input-dates, #times-input-years {
+        display: none;
+    }
+
+    .center {
+        width: 300px;
+        height: 300px;
+
+        position: absolute;
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        margin: auto;
+    }
+
+    .shift-slightly-right {
+
+    }
+
+    /* .center {
+
+    } */
+
+    }
+</style>
+</head>
+<body>
+    <div class="topnav">
+        <a class="active">Activation Time</a>
+    </div>
+
+    <div class="center" style="padding-left:160px">
+        <h2></h2>
+        <div id="times"></div>
+    </div>
+
+    </div>
+    <script type="text/javascript" src="dist/mtr-datepicker.min.js"></script>
+    <script>
+    const config = {
+        target: 'times',
+    };
+    const timePicker = new MtrDatepicker(config);
+    timePicker.onChange('time', function() {
+        const selectedTime = timePicker.toLocaleTimeString();
+        console.log(selectedTime);
+    });
+
+    </script>
+</body>
+</html>
